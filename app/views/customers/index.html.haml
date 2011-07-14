@@ -1,0 +1,32 @@
+%h1 Customers 
+
+%table
+  %tr
+    %td
+      %b Name
+    %td
+      %b Address
+    %td
+      %b City
+    %td
+      %b State
+    %td
+      %b Zip
+    %td
+      %b Contact
+  -@customers.each do |customer|
+    %tr
+      %td
+        ="#{customer.first_name} #{customer.last_name}"
+      %td
+        customer.address
+      %td
+        customer.city
+      %td
+        customer.state
+      %td
+        customer.zip
+      %td
+        customer.contact
+%br
+=link_to "Add customer", new_customer_path

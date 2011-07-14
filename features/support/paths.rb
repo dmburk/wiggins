@@ -10,7 +10,7 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-    when /the 'Customers' index page/
+    when /the "Customers" index page/
       customers_path
 
     # Add more mappings here.
