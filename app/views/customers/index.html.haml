@@ -1,7 +1,7 @@
 %h1 Customers 
 
 %table
-  %tr
+  %tr.even
     %td
       %b Name
     %td
@@ -15,18 +15,18 @@
     %td
       %b Contact
   -@customers.each do |customer|
-    %tr
+    %tr{ :class => cycle('odd', 'even') }
       %td
         ="#{customer.first_name} #{customer.last_name}"
       %td
-        customer.address
+        =customer.address
       %td
-        customer.city
+        =customer.city
       %td
-        customer.state
+        =customer.state
       %td
-        customer.zip
+        =customer.zip
       %td
-        customer.contact
+        =customer.contact
 %br
 =link_to "Add customer", new_customer_path
