@@ -1,2 +1,17 @@
-%h1 Units#new
-%p Find me in app/views/units/new.html.haml
+%h1 New Unit
+
+=form_for @unit do |f|
+  %div.field
+  =f.label :model
+  %br
+  =f.text_field :model
+  %br
+  =f.label :serial_number
+  %br
+  =f.text_field :serial_number
+  %br
+  =f.label :customer_id
+  %br
+  =f.text_field :customer_id
+  %br
+  =f.submit "Add"

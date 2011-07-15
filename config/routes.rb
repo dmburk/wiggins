@@ -3,6 +3,7 @@ Wiggins::Application.routes.draw do
   root :to => 'units#index'
 
   resources :customers, :units
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
