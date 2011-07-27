@@ -2,6 +2,10 @@
 
 =form_for @unit do |f|
   %div.field
+  =f.label :customer_id
+  %br
+  =f.text_field :customer_id
+  %br
   =f.label :model
   %br
   =f.text_field :model
@@ -9,9 +13,5 @@
   =f.label :serial_number
   %br
   =f.text_field :serial_number
-  %br
-  =f.label :customer_id
-  %br
-  =f.text_field :customer_id
   %br
   =f.submit "Add"

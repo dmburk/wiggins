@@ -1,6 +1,7 @@
 %h1 Add customer 
 
 =form_for @customer do |f|
+  =render 'shared/error_messages', :object => f.object
   %div.field
   =f.label :first_name
   %br

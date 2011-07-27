@@ -15,5 +15,7 @@ group :development, :test do
   gem 'jquery-rails'
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'escape_utils'
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
 

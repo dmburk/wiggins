@@ -1,10 +1,19 @@
 class CustomersController < ApplicationController
   def index
-      @customers = Customer.all
+      @customers = Customer.find(:all, :order => "first_name, last_name")
   end
 
   def new
     @customer = Customer.new
+  end
+
+  def show
+    @customer = Customer.find(params[:id])
+    @unit = Unit.new
+  end
+  
+  def edit
+    @customer = Customer.find(params[:id])
   end
 
   def create
@@ -13,7 +22,7 @@ class CustomersController < ApplicationController
       flash[:notice] = "Customer added."
       redirect_to customers_path
     else
-      redirect_to new_customer_path
+      render('new') 
     end
   end
 end

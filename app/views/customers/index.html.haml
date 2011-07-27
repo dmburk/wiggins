@@ -1,23 +1,10 @@
 %h1 Customers 
-
 %table
-  %tr.even
-    %td
-      %b Name
-    %td
-      %b Address
-    %td
-      %b City
-    %td
-      %b State
-    %td
-      %b Zip
-    %td
-      %b Contact
+  =render "customer_header"
   -@customers.each do |customer|
     %tr{ :class => cycle('odd', 'even') }
       %td
-        ="#{customer.first_name} #{customer.last_name}"
+        =link_to customer.full_name, customer
       %td
         =customer.address
       %td
