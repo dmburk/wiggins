@@ -1,2 +1,32 @@
 %h1 Edit Customer
 
+=form_for @customer, :url => { :action => 'update' } do |f|
+  =f.label :first_name
+  %br
+  =f.text_field :first_name
+  %br
+  =f.label :last_name
+  %br
+  =f.text_field :last_name
+  %br
+  =f.label :address
+  %br
+  =f.text_field :address
+  %br
+  =f.label :city
+  %br
+  =f.text_field :city
+  %br
+  =f.label :state
+  %br
+  =f.text_field :state
+  %br
+  =f.label :zip
+  %br
+  =f.text_field :zip
+  %br
+  =f.label :contact
+  %br
+  =f.text_field :contact
+  %br
+  =f.submit "Update"
