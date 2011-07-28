@@ -16,6 +16,15 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
+  def update
+    if @customer.update_attributes(params[:customer])
+      flash[:notice] = "Customer updated."
+      redirect_to @customer
+    else
+      render 'edit'
+    end
+  end
+
   def create
     @customer = Customer.new(params[:customer])
     if @customer.save

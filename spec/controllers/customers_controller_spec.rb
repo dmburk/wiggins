@@ -79,6 +79,29 @@ describe CustomersController do
         response.should redirect_to(customers_path)
       end
     end
+  end
 
+  describe "GET 'edit'" do
+    it "should be successful" do
+      @customer = Factory(:customer)
+      get :edit, :id => @customer
+      response.should be_success
+    end
+  end
+
+  describe "PUT 'update'" do
+
+    describe "failure" do
+      before(:each) do
+        @customer = Factory(:customer)
+        @attr = { :first_name   => "", :last_name    => "" }
+      end
+
+      it "should render the 'edit' page" do
+        @customer = Factory(:customer)
+        put :update, :id => @customer, :customer => @attr
+        response.should render_template('edit')
+      end
+    end
   end
 end
