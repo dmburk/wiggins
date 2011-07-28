@@ -1,6 +1,7 @@
 class Customer < ActiveRecord::Base
-  before_create :full_name
+  attr_accessible :first_name, :last_name, :address, :city, :state, :zip, :contact
   has_many :units
+  before_create :full_name
   accepts_nested_attributes_for :units
   validates  :first_name, :last_name, :address, :city, :state, :zip, :contact, :presence => true
                          
