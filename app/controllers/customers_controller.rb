@@ -17,6 +17,7 @@ class CustomersController < ApplicationController
   end
 
   def update
+    @customer = Customer.find(params[:id])
     if @customer.update_attributes(params[:customer])
       flash[:notice] = "Customer updated."
       redirect_to @customer

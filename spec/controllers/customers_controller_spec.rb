@@ -98,9 +98,32 @@ describe CustomersController do
       end
 
       it "should render the 'edit' page" do
-        @customer = Factory(:customer)
         put :update, :id => @customer, :customer => @attr
         response.should render_template('edit')
+      end
+    end
+
+    describe "success" do
+      before(:each) do
+        @customer = Factory(:customer)
+        @attr = { :first_name => "Bob", :last_name  => "Thomas" }
+      end
+
+      it "should change the user's attributes" do
+        put :update, :id => @customer, :customer => @attr
+        @customer.reload
+        @customer.first_name.should == @attr[:first_name]
+        @customer.last_name.should  == @attr[:last_name]
+      end
+
+      it "should redirect to the customer show page" do
+        put :update, :id => @customer, :customer => @attr
+        response.should redirect_to(customer_path(@customer))
+      end
+
+      it "should have a flash message" do
+        put :update, :id => @customer, :customer => @attr
+        flash[:notice].should =~ /updated/
       end
     end
   end
