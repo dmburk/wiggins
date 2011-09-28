@@ -1,0 +1,66 @@
+/* Code from css.maxdesign.com.au/floatutorial */
+#container
+{
+width: 90%;
+margin: 10px auto;
+background-color: #fff;
+color: #333;
+border: 1px solid gray;
+line-height: 130%;
+}
+
+#top
+{
+padding: 1em;
+background-color: #ddd;
+border-bottom: 1px solid gray;
+}
+
+#top h1
+{
+padding: 0;
+margin: 0;
+}
+
+#searchbar {
+float: right;
+margin: 0;
+padding: 0;
+}
+
+#customer
+{
+float: left;
+width: 50%; 
+margin: 0;
+padding: 1em;
+}
+
+#units
+{
+/*margin-left: 400px;*/
+width: 50%;
+height: 150px;
+float: left;
+max-width: 36em;
+padding: 1em;
+}
+
+#new_unit {
+clear: both;
+float: right;
+margin: 0;
+}
+
+#footer
+{
+clear: both;
+margin: 0;
+padding: .5em;
+color: #333;
+background-color: #ddd;
+border-top: 1px solid gray;
+}
+
+#customer p { margin: 0 0 1em 0; }
+#units h2 { margin: 0 0 .5em 0; }

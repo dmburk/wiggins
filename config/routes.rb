@@ -3,6 +3,7 @@ Wiggins::Application.routes.draw do
   root :to => 'customers#index'
   resources :customers, :units
   resources :autocomplete_searches, :only => [:index], :as => 'autocomplete'
+  match 'search' => 'search#search'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

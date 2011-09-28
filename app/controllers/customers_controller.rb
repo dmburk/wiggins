@@ -35,4 +35,10 @@ class CustomersController < ApplicationController
       render('new') 
     end
   end
+
+  def destroy
+    Customer.find(params[:id]).destroy
+    flash[:notice] = "Customer deleted."
+    redirect_to customers_path
+  end
 end

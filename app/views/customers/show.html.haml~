@@ -47,14 +47,16 @@
           %td
             = unit.serial_number
 
+  %br
+  %br
+  %br
 %div#new_unit
-  =form_for @unit do |f|
-    %div#new_unit
-      =f.label :model
-      =f.text_field :model
-    %div#new_unit
-      =f.label :serial_number
-      =f.text_field :serial_number
+  %h2
+    Add new unit
+  = form_for @unit do |f|
+    =f.label :model
+    =f.text_field :model
+    =f.label :serial_number
+    =f.text_field :serial_number
     =f.hidden_field :customer_id, :value => @customer.id
-    %div#new_unit
-      =f.submit "Add Unit"
+    =f.submit "Add Unit"

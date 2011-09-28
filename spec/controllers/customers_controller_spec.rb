@@ -127,4 +127,21 @@ describe CustomersController do
       end
     end
   end
+
+  describe "DELETE 'destroy'" do
+    before(:each) do
+      @customer = Factory(:customer)
+    end
+
+    it "should destroy the customer" do
+      lambda do
+        delete :destroy, :id => @customer
+      end.should change(Customer, :count).by(-1)
+    end
+
+    it "should redirect to the customers page" do
+      delete :destroy, :id => @customer
+      response.should redirect_to(customers_path)
+    end
+  end
 end
