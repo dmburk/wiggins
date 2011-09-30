@@ -1,0 +1,9 @@
+- if @results.empty?
+  %span = "Your search did not return any results"
+- else
+  - for result in @results
+    = "Result: " + result.first_name + result.last_name
+    -end
+  -end
+
+

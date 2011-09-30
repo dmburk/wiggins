@@ -1,5 +1,7 @@
 class UnitsController < ApplicationController
+
   def index
+    @units = Unit.search(params[:search])
   end
 
   def new
@@ -13,5 +15,4 @@ class UnitsController < ApplicationController
     end
     redirect_to customer_path(@unit.customer_id)
   end
-
 end

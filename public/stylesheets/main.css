@@ -1,4 +1,8 @@
 /* Code from css.maxdesign.com.au/floatutorial */
+body {
+background-color: #528B8B
+}
+
 #container
 {
 width: 90%;
@@ -31,25 +35,31 @@ padding: 0;
 #customer
 {
 float: left;
-width: 50%; 
+width: 30%;
 margin: 0;
 padding: 1em;
+}
+
+#notes
+{
+  float: left;
+  margin: 0;
+  padding: 1em;
 }
 
 #units
 {
 /*margin-left: 400px;*/
-width: 50%;
-height: 150px;
+clear: left;
 float: left;
-max-width: 36em;
+width: 30%;
 padding: 1em;
 }
 
 #new_unit {
-clear: both;
-float: right;
+float: left;
 margin: 0;
+padding: 1em;
 }
 
 #footer

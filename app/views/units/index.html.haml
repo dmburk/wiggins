@@ -1,3 +1,17 @@
-%h1 Units#index
-
+%h1 Installed Units
+- if @units.empty?
+  %p
+    %i
+      No units match your search
+- else
+  %table
+    -@units.each do |unit|
+      %tr
+        %td
+          = link_to unit.model, unit.customer
+        %td
+          = unit.serial_number
+        %td
+          = unit.install_date
+%p
 =link_to "Add unit", new_unit_path

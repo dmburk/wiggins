@@ -1,6 +1,9 @@
 class CustomersController < ApplicationController
+  before_filter :serial_search, :only => :index
+
   def index
-      @customers = Customer.find(:all, :order => "first_name, last_name")
+    @customers = Customer.search(params[:search])
+    #@customers = Customer.find(:all, :order => "first_name, last_name")
   end
 
   def new
@@ -40,5 +43,11 @@ class CustomersController < ApplicationController
     Customer.find(params[:id]).destroy
     flash[:notice] = "Customer deleted."
     redirect_to customers_path
+  end
+
+  def serial_search
+    if params[:searchby] == "Serial Number"
+      redirect_to :controller => 'units', :action => 'index', :search => params[:search]
+    end
   end
 end

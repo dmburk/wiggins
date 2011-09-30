@@ -1,3 +1,6 @@
+/////////////////////////////
+/// Customer Information ///
+///////////////////////////
 %div#customer
   %table
     %tr
@@ -26,8 +29,19 @@
         |
         =link_to "Delete", @customer, :method => :delete, :confirm => "You sure?", :title => "Delete #{@customer.first_name} #{@customer.last_name}"
 
+///////////////////////
+/// Customer Notes ///
+/////////////////////
+%div#notes
+  %h1
+    Customer Notes
+  Customer Notes Go Here
+
+///////////////////////
+/// Customer Units ///
+//////////////////////
 %div#units
-  %h1 Units
+  %h1 Installed Units
   - if (@customer.units.empty?) # Display message if Customer has no units
     %p
       %i There are no units for this customer.
@@ -39,7 +53,6 @@
           Model
         %td
           Serial Number
-
       - @customer.units.each do |unit|
         %tr
           %td
@@ -47,14 +60,35 @@
           %td
             = unit.serial_number
 
+//////////////////////
+/// Add New Units ///
+/////////////////////
 %div#new_unit
   =form_for @unit do |f|
     %div#new_unit
-      =f.label :model
-      =f.text_field :model
-    %div#new_unit
-      =f.label :serial_number
-      =f.text_field :serial_number
-    =f.hidden_field :customer_id, :value => @customer.id
-    %div#new_unit
-      =f.submit "Add Unit"
+      %table
+        %tr
+          %td
+            =f.label :model
+          %td
+            =f.text_field :model
+        %tr
+          %td
+            =f.label :serial_number
+          %td
+            =f.text_field :serial_number
+          /// Javascript Datepicker
+          :javascript
+            $(function() {
+              $( "#datepicker" ).datepicker();
+            });
+        %tr
+          %td
+            Date:
+          %td
+            %input{ :id => "datepicker", :type => "text"}
+        %tr
+          %td
+          %td{ :align => 'right' }
+            =f.hidden_field :customer_id, :value => @customer.id
+            =f.submit "Add Unit"

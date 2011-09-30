@@ -1,8 +1,7 @@
 %h1 Customers 
 %table
-  =render "customer_header"
   -@customers.each do |customer|
-    %tr{ :class => cycle('odd', 'even') }
+    %tr
       %td
         =link_to customer.full_name, customer
       %td

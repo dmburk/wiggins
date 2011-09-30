@@ -3,8 +3,7 @@ class SearchController < ApplicationController
 
   def search
     if params[:searchby] == "Customers"
-      @results = Customer.find(:all, :conditions => { :first_name => params[:search] })
-      redirect_to( :controller => "Customers", :action
+      @results = Customer.find(:all, :conditions => :params[:search])
     end
     if params[:searchby] == "Units"
       @results = Units.search(params[:search])
@@ -12,6 +11,13 @@ class SearchController < ApplicationController
   end
 
     
+  #def self.search(search)
+  #  if search
+  #    find(:all, :conditions => ['first_name LIKE ?', "%#{search}%"])
+  #  else
+  #    find(:all)
+  #  end
+  #end
 
   #def self.search(q)
   #  [:name, :description].inject(scoped) do |combined_scope, attr|

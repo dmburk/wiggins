@@ -9,4 +9,12 @@ class Customer < ActiveRecord::Base
   def full_name
     self.full_name = "#{first_name} #{last_name}"
   end
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['full_name LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
 end
