@@ -15,4 +15,5 @@
       %td
         =customer.contact
 %br
-=link_to "Add customer", new_customer_path
+= link_to "Add customer", new_customer_path
+= facebox_link_to "Units", :url => customers_path
