@@ -1,0 +1,2 @@
+module ServiceNotesHelper
+end

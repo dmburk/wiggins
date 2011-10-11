@@ -1,41 +1,13 @@
-/////////////////////////////
-/// Customer Information ///
-///////////////////////////
-%div#customer
-  %table
-    %tr
-      %td
-        %h1
-          = @customer.full_name
+= render 'shared/customer_info' 
 
-    %tr{:align => 'center', :bgcolor => 'EEEEEE'}
-      %td
-        %b Address
-    %tr{:align => 'center'}
-      %td
-        = @customer.address
-        %br
-        = @customer.city + ", " + @customer.state + " " + @customer.zip
-
-    %tr{:align => 'center', :bgcolor => 'EEEEEE'}
-      %td
-        %b Contact #
-    %tr{:align => 'center'}
-      %td
-        = @customer.contact
-    %tr{:align => 'right'}
-      %td
-        =link_to "Edit", edit_customer_path
-        |
-        =link_to "Delete", @customer, :method => :delete, :confirm => "You sure?", :title => "Delete #{@customer.first_name} #{@customer.last_name}"
 
 ///////////////////////
 /// Customer Notes ///
 /////////////////////
 %div#notes
-  %h1
-    Customer Notes
+  %h1 Customer Notes
   Customer Notes Go Here
+
 
 ///////////////////////
 /// Customer Units ///
@@ -59,36 +31,17 @@
             = unit.model
           %td
             = unit.serial_number
+      %tr
+        %td{ :colspan => 2, :align => 'right' }
+          = link_to "Add New Unit", new_unit_path
 
-//////////////////////
-/// Add New Units ///
-/////////////////////
-%div#new_unit
-  =form_for @unit do |f|
-    %div#new_unit
-      %table
-        %tr
-          %td
-            =f.label :model
-          %td
-            =f.text_field :model
-        %tr
-          %td
-            =f.label :serial_number
-          %td
-            =f.text_field :serial_number
-          /// Javascript Datepicker
-          :javascript
-            $(function() {
-              $( "#datepicker" ).datepicker();
-            });
-        %tr
-          %td
-            Date:
-          %td
-            %input{ :id => "datepicker", :type => "text"}
-        %tr
-          %td
-          %td{ :align => 'right' }
-            =f.hidden_field :customer_id, :value => @customer.id
-            =f.submit "Add Unit"
+
+///////////////////////
+/// Service Notes   ///
+///////////////////////
+%div#unit_notes
+  %h1 Service Notes
+  Service notes will go here. 
+
+
+          

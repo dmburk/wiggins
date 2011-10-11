@@ -1,0 +1,28 @@
+/////////////////////////////
+/// Customer Information ///
+///////////////////////////
+%div#customer
+  %table
+    %tr
+      %td
+        %h1= @customer.full_name
+
+    %tr{:align => 'center', :bgcolor => 'EEEEEE'}
+      %td
+        %b Address
+    %tr{:align => 'center'}
+      %td
+        = @customer.address
+        %br
+        = @customer.city + ", " + @customer.state + " " + @customer.zip
+
+    %tr{:align => 'center', :bgcolor => 'EEEEEE'}
+      %td
+        %b Contact #
+    %tr{:align => 'center'}
+      %td
+        = @customer.contact
+    %tr{:align => 'right'}
+      %td
+        = link_to "Edit", edit_customer_path
+        //=button_to "Delete", @customer, :method => :delete, :confirm => "You sure?", :title => "Delete #{@customer.first_name} #{@customer.last_name}"

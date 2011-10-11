@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   before_filter :serial_search, :only => :index
+  before_filter :find_customer, :only => [ :show, :edit, :update ]
 
   def index
     @customers = Customer.search(params[:search])
@@ -8,23 +9,16 @@ class CustomersController < ApplicationController
 
   def new
     @customer = Customer.new
-    respond_to do |format|
-      format.html
-      format.js { render_to_facebox }
-    end
   end
 
   def show
-    @customer = Customer.find(params[:id])
-    @unit = Unit.new
+   @unit = Unit.new
   end
   
   def edit
-    @customer = Customer.find(params[:id])
   end
 
   def update
-    @customer = Customer.find(params[:id])
     if @customer.update_attributes(params[:customer])
       flash[:notice] = "Customer updated."
       redirect_to @customer
@@ -53,5 +47,9 @@ class CustomersController < ApplicationController
     if params[:searchby] == "Serial Number"
       redirect_to :controller => 'units', :action => 'index', :search => params[:search]
     end
+  end
+
+  def find_customer
+    @customer = Customer.find(params[:id])
   end
 end

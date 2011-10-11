@@ -1,0 +1,33 @@
+//= render 'shared/customer_info'
+//////////////////////
+/// Add New Units ///
+/////////////////////
+%div#new_unit
+  =form_for @unit do |f|
+    %div#new_unit
+      %table
+        %tr
+          %td
+            =f.label :model
+          %td
+            =f.text_field :model
+        %tr
+          %td
+            =f.label :serial_number
+          %td
+            =f.text_field :serial_number
+          /// Javascript Datepicker
+          :javascript
+            $(function() {
+              $( "#datepicker" ).datepicker();
+            });
+        %tr
+          %td
+            Date:
+          %td
+            %input{ :id => "datepicker", :type => "text"}
+        %tr
+          %td
+          %td{ :align => 'right' }
+            =f.hidden_field :customer_id, :value => @customer.id
+            =f.submit "Add Unit"

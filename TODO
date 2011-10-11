@@ -1,0 +1,5 @@
+Fix Success / Failure flash message.
+Move add units to it's own page.
+Clean up code.
+Add make, model, serial number to units.
+Add service orders attached to units? or customers?

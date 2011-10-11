@@ -1,19 +1,19 @@
 %h1 Customers 
 %table
+  %tr{ :bgcolor => "#A4D3EE", :align => "center" }
+    %td Name
+    %td Address
+    %td City
+    %td State
+    %td Zip
+    %td Contact #
   -@customers.each do |customer|
     %tr
-      %td
-        =link_to customer.full_name, customer
-      %td
-        =customer.address
-      %td
-        =customer.city
-      %td
-        =customer.state
-      %td
-        =customer.zip
-      %td
-        =customer.contact
-%br
-= link_to "Add customer", new_customer_path
-= facebox_link_to "Units", :url => customers_path
+      %td= link_to customer.full_name, customer
+      %td= customer.address
+      %td= customer.city
+      %td= customer.state
+      %td= customer.zip
+      %td= customer.contact
+  %tr
+    %td{ :colspan => 6, :align => "right" }= link_to "Add customer", new_customer_path
