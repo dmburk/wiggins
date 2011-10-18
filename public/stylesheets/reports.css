@@ -1,0 +1,116 @@
+h2 {
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+table.report {
+  background-color: #fafafa;
+  border: 1px #000000 solid;
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+table.report th {
+  background-color: #99CCCC;
+  text-align: left;
+  border: 1px #000000 solid;
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 1em;
+  color: #404040;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+table.report td {
+  border-bottom: 1px #6699CC dotted;
+  text-align: left;
+  font-family: Verdana, sans-serif, Arial;
+  font-weight: normal;
+  font-size: 1em;
+  color: #404040;
+  background-color: #fafafa;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+table.customer {
+  width: 100%;
+  background-color: #fafafa;
+  border: 1px #000000 solid;
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+table.customer th {
+  background-color: #99CCCC;
+  text-align: center;
+  border: 1px #000000 solid;
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 1em;
+  color: #404040;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+table.customer td {
+  border-bottom: 1px #6699CC dotted;
+  text-align: center;
+  font-family: Verdana, sans-serif, Arial;
+  font-weight: normal;
+  font-size: 1em;
+  color: #404040;
+  background-color: #fafafa;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#customer
+{
+float: left;
+width: 300px;
+margin: 0;
+padding: 1em;
+}
+
+#notes
+{
+  clear: both;
+  margin: 0;
+  padding: 1em;
+}
+
+#units
+{
+/*margin-left: 400px;*/
+clear: left;
+float: left;
+width: 30%;
+margin: 0;
+padding: 1em;
+}
+
+#unit_notes {
+float: right;
+width: 50%;
+padding: 1em;
+}
+
+#new_unit {
+float: left;
+margin: 0;
+padding: 1em;
+}
+

@@ -4,30 +4,40 @@
     %title Wiggins Electric
     = stylesheet_link_tag :all 
     = javascript_include_tag :all
+    = csrf_meta_tag
+
+    // Optional can include jQuery from Google instead of hosting it locally.
     = #%script{ :type => "text/javascript", :src => 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'}
     = #%script{ :type => "text/javascript", :src => 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js'}
-    = csrf_meta_tag
  
   %body
+    
     %div#container
+
+      // Application header
       %div#top
         %h1 Wiggins Electric
         %br
+
+        // Menu
         = link_to 'Customers', customers_path
         = " - "
         = link_to 'Units', units_path
+
+        // Search bar on application header.
         %div#searchbar
-          //= select( "searchterm", "searchby", { "Customers" => "Customers", "Units" => "Units" } )
-          //= search_field(:customer, :first_name)
-          //= submit_tag("Search")
           = form_tag({:controller => "customers", :action => "index"}, :method => "get") do
             = select_tag "searchby", options_for_select([ "Customers", "Serial Number" ])
             = text_field_tag :search, params[:search]
             = submit_tag "Search", :name => nil
 
+      // Render flash messages.
       = render "layouts/notice_div.html.erb"
+
       %div#content
         = yield
 
       %div#footer
+
+    // For development: Show params on each page.
     = debug(params) if Rails.env.development?

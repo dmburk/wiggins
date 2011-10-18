@@ -1,19 +1,21 @@
 %h1 Customers 
-%table
-  %tr{ :bgcolor => "#A4D3EE", :align => "center" }
-    %td Name
-    %td Address
-    %td City
-    %td State
-    %td Zip
-    %td Contact #
+
+%p= link_to "Add customer", new_customer_path
+
+%table.report
+  %tr
+    %th Name
+    %th Address
+    %th City
+    %th{ :width => '60px' } State
+    %th Zip
+    %th Contact #
   -@customers.each do |customer|
     %tr
       %td= link_to customer.full_name, customer
       %td= customer.address
       %td= customer.city
-      %td= customer.state
+      // Figure out how to overide CSS text-align left
+      %td{ :align => 'center' }= customer.state
       %td= customer.zip
       %td= customer.contact
-  %tr
-    %td{ :colspan => 6, :align => "right" }= link_to "Add customer", new_customer_path

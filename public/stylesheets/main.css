@@ -46,44 +46,6 @@ padding: 0;
 padding: 1em;
 }
 
-#customer
-{
-float: left;
-width: 30%;
-margin: 0;
-padding: 1em;
-}
-
-#notes
-{
-  float: right;
-  width: 50%;
-  margin: 0;
-  padding: 1em;
-}
-
-#units
-{
-/*margin-left: 400px;*/
-clear: left;
-float: left;
-width: 30%;
-margin: 0;
-padding: 1em;
-}
-
-#unit_notes {
-float: right;
-width: 50%;
-padding: 1em;
-}
-
-#new_unit {
-float: left;
-margin: 0;
-padding: 1em;
-}
-
 #footer
 {
 clear: both;
@@ -93,9 +55,6 @@ color: #333;
 background-color: #ddd;
 border-top: 1px solid gray;
 }
-
-#customer p { margin: 0 0 1em 0; }
-#units h2 { margin: 0 0 .5em 0; }
 
 nav ul {
   margin: 0;
@@ -119,7 +78,4 @@ nav ul li a:visited {
 
 nav ul li a:hover {
   text-decoration: underline;
-}
-
-td {
 }

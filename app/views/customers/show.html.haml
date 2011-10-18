@@ -1,39 +1,45 @@
 = render 'shared/customer_info' 
 
+///////////////////////
+/// Customer Units ///
+//////////////////////
+%div#units
+  %h2 Installed Units
+  %table.report
+    %tr
+      %th Model
+      %th Serial Number
+
+    - if (@customer.units.empty?) # Display message if Customer has no units
+      %tr
+        %td{ :colspan => '2' } There are no installed units for this customer.
+    - else
+      - # Show each Unit tied to selected customer. 
+      - @customer.units.each do |unit|
+        %tr
+          %td= unit.model
+          %td= unit.serial_number
+    %tr
+      %td{ :colspan => 2, :style => 'text-align: right' }
+        = link_to "Add New Unit", new_unit_path
+
 
 ///////////////////////
 /// Customer Notes ///
 /////////////////////
 %div#notes
-  %h1 Customer Notes
-  Customer Notes Go Here
-
-
-///////////////////////
-/// Customer Units ///
-//////////////////////
-%div#units
-  %h1 Installed Units
-  - if (@customer.units.empty?) # Display message if Customer has no units
-    %p
-      %i There are no units for this customer.
-  - else
-    - # Show each Unit tied to selected customer. 
-    %table
-      %tr.even
-        %td
-          Model
-        %td
-          Serial Number
-      - @customer.units.each do |unit|
-        %tr
-          %td
-            = unit.model
-          %td
-            = unit.serial_number
-      %tr
-        %td{ :colspan => 2, :align => 'right' }
-          = link_to "Add New Unit", new_unit_path
+  %h2 Customer Notes
+  %table.report
+    %tr
+      %th Note
+      %th Date Added
+      %th 
+    %tr
+      %td Test Note - Static
+      %td Test Date - Static
+      %td Edit | Delete
+    %tr
+      %td{ :colspan => '3', :style => 'text-align: right' } New Note
 
 
 ///////////////////////
