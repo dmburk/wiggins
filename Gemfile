@@ -1,9 +1,10 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
-gem 'sqlite3'
 gem 'haml-rails'
 gem 'jquery-rails', '>= 1.0.12'
+gem 'pg'
+#gem 'postgres'
 
 group :development, :test do
   gem 'rspec-rails'
