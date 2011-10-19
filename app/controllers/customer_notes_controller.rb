@@ -1,5 +1,5 @@
 class CustomerNotesController < ApplicationController
-  before_filter :find_note, :only => [ :show, :edit, :update, :destroy ]
+  #before_filter :find_note, :only => [ :show, :edit, :update, :destroy ]
 
   
   def new

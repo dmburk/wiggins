@@ -157,7 +157,7 @@ DEPENDENCIES
   factory_girl
   factory_girl_rails
   haml-rails
-  jquery-rails
+  jquery-rails (>= 1.0.12)
   rails (= 3.0.7)
   rspec
   rspec-rails

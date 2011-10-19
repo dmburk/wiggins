@@ -5,6 +5,7 @@ class UnitsController < ApplicationController
   end
 
   def new
+    @customer = Customer.find(params[:customer_id])
     @unit = Unit.new
   end
 
