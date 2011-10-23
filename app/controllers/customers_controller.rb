@@ -12,7 +12,6 @@ class CustomersController < ApplicationController
   end
 
   def show
-   @unit = Unit.new
   end
   
   def edit

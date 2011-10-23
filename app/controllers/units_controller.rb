@@ -11,9 +11,14 @@ class UnitsController < ApplicationController
 
   def create
     @unit = Unit.new(params[:unit])
+
     if @unit.save
       flash[:notice] = "Unit added."
     end
     redirect_to customer_path(@unit.customer_id)
+  end
+
+  def edit
+    @unit = Unit.find(params[:id])
   end
 end

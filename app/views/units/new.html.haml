@@ -3,7 +3,7 @@
 /// Add New Units ///
 /////////////////////
 %div#new_unit
-  =form_for @unit do |f|
+  =form_for [@customer, @unit] do |f|
     %div#new_unit
       %table
         %tr
@@ -16,11 +16,6 @@
             =f.label :serial_number
           %td
             =f.text_field :serial_number
-          /// Javascript Datepicker
-          :javascript
-            $(function() {
-              $( "#datepicker" ).datepicker();
-            });
         %tr
           %td
             Date
