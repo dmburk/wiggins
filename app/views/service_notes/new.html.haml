@@ -1,0 +1,26 @@
+#service_note_form
+  = form_for @service_note do |f|
+    %fieldset
+      %legend Add Service Note
+      %ol
+        %li
+          = render 'shared/error_messages', :object => f.object
+
+      /// Javascript Datepicker
+      :javascript
+        $(function() {
+          $( "#datepicker" ).datepicker();
+          });
+
+      %ol
+        %li
+          = f.label :date
+          = f.text_field :date
+      %ol
+        %li
+          = f.label :note
+          = f.text_field :note
+      %ol
+        %li
+          = f.hidden_field :customer_id, :value => @customer.id
+          = f.submit "Add"

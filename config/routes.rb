@@ -4,10 +4,11 @@ Wiggins::Application.routes.draw do
 
   resources :customers do
     resources :units
+    resources :service_notes
   end
 
-  resources :customer, :units
-  resources :autocomplete_searches, :only => [:index], :as => 'autocomplete'
+  #resources :customers, :units, :service_notes
+  #resources :autocomplete_searches, :only => [:index], :as => 'autocomplete'
 
   match 'search' => 'search#search'
 

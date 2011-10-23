@@ -103,7 +103,8 @@ padding: 1em;
 }
 
 #unit_notes {
-float: right;
+clear: left;
+float: left;
 width: 50%;
 padding: 1em;
 }

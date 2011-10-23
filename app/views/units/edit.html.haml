@@ -1,0 +1,19 @@
+%div#new_unit
+  = form_for [:customer, @customer, @unit] do |f|
+    %fieldset
+      %legend Edit Unit
+      %ol
+        %li
+          = f.label :model
+          = f.text_field :model
+      %ol
+        %li
+          = f.label :serial_number
+          = f.text_field :serial_number
+      %ol
+        %li
+          = f.label :install_date
+          = f.text_field :install_date
+      %ol
+        %li
+          = f.submit "Edit"
