@@ -3,26 +3,20 @@
 /// Add New Units ///
 /////////////////////
 %div#new_unit
-  =form_for [@customer, @unit] do |f|
+  = form_for [@customer, @unit] do |f|
     %div#new_unit
       %table
         %tr
-          %td
-            =f.label :model
-          %td
-            =f.text_field :model
+          %td= f.label :model
+          %td= f.text_field :model
         %tr
-          %td
-            =f.label :serial_number
-          %td
-            =f.text_field :serial_number
+          %td= f.label :serial_number
+          %td= f.text_field :serial_number
         %tr
-          %td
-            Date
-          %td
-            %input{ :id => "datepicker", :type => "text"}
+          %td= f.label :install_date
+          %td= f.text_field :install_date
         %tr
           %td
           %td{ :align => 'right' }
-            =f.hidden_field :customer_id, :value => @customer.id
-            =f.submit "Add Unit"
+            = f.hidden_field :customer_id, :value => @customer.id
+            = f.submit "Add Unit"

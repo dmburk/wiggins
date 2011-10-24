@@ -1,5 +1,5 @@
 %div#new_unit
-  = form_for [:customer, @customer, @unit] do |f|
+  = form_for [@customer, @unit] do |f|
     %fieldset
       %legend Edit Unit
       %ol
@@ -16,4 +16,5 @@
           = f.text_field :install_date
       %ol
         %li
+          = f.hidden_field :customer_id, :value => @customer.id
           = f.submit "Edit"

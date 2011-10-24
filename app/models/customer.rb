@@ -1,7 +1,7 @@
 class Customer < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :address, :city, :state, :zip, :contact
-  has_many :units
-  has_many :service_notes
+  has_many :units, :order => 'install_date DESC'
+  has_many :service_notes, :order => 'date DESC'
   before_create :full_name
   accepts_nested_attributes_for :units
   validates  :first_name, :last_name, :address, :city, :state, :zip, :contact, :presence => true

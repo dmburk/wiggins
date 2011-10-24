@@ -19,6 +19,17 @@ class UnitsController < ApplicationController
   end
 
   def edit
+    @customer = Customer.find(params[:customer_id])
     @unit = Unit.find(params[:id])
+  end
+
+  def update
+    @unit = Unit.find(params[:id])
+    if @unit.update_attributes!(params[:unit])
+      flash[:notice] = "Unit updated"
+      redirect_to customer_path(@unit.customer_id)
+    else
+      render 'edit'
+    end
   end
 end
